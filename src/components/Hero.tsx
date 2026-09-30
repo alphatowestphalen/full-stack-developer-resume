@@ -241,7 +241,7 @@ export default function Hero() {
                     onChange={(e) => setCurrentInput(e.target.value)}
                     onKeyDown={handleKeyDown}
                     placeholder="Tapez une commande..."
-                    className="flex-1 bg-transparent text-fog outline-none placeholder-dim focus:outline-none"
+                    className="flex-1 bg-transparent text-fog outline-none placeholder:text-dim focus:outline-none"
                     autoFocus
                   />
                   {!currentInput && <span className="caret inline-block h-4 w-2 translate-y-0.5 bg-mint" />}
