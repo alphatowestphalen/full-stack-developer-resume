@@ -128,10 +128,11 @@ export default function About() {
                   </div>
 
                   <a
-                    href={`mailto:${contact.email}?subject=Demande%20de%20CV%20—%20Alphato%20Westphalen`}
+                    href="/CV_fullStack_Java_Angular_Alphato.pdf"
+                    download="CV_fullStack_Java_Angular_Alphato.pdf"
                     className="mt-8 flex w-full items-center justify-center gap-2.5 rounded-md border border-ember/40 bg-ember/5 px-5 py-3.5 font-mono text-sm uppercase tracking-[0.12em] text-ember transition-all duration-300 hover:-translate-y-0.5 hover:bg-ember hover:text-ink-950"
                   >
-                    Demander mon CV complet
+                    Télécharger mon CV complet
                     <span aria-hidden="true">↗</span>
                   </a>
                 </div>

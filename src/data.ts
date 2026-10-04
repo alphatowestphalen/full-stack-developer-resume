@@ -3,6 +3,7 @@ import imgTmf from "./assets/proj-tmf.jpg";
 import imgMgo from "./assets/proj-mgo.jpg";
 import imgEscola from "./assets/proj-escola.jpg";
 import imgStocks from "./assets/proj-stocks.jpg";
+import imgMedicalAppointments from "./assets/proj-rendez-vous-medicaux.jpg";
 
 /* ------------------------------------------------------------------ */
 /*  Coordonnées                                                        */
@@ -27,8 +28,8 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "2+", label: "années d'expérience" },
-  { value: "6", label: "projets menés" },
+  { value: "3+", label: "années d'expérience" },
+  { value: "7", label: "projets menés" },
   { value: "4", label: "entreprises & missions" },
   { value: "15+", label: "technologies maîtrisées" },
 ];
@@ -43,7 +44,7 @@ export const marqueeItems = [
 /*  Profil                                                             */
 /* ------------------------------------------------------------------ */
 export const profilParagraphs = [
-  "Développeur Full Stack Java & Angular avec plus de 2 ans d'expérience dans la conception et le développement d'applications web et mobiles performantes et sécurisées. Solide maîtrise de Java (Spring Boot, Quarkus) côté backend et d'Angular côté frontend.",
+  "Développeur Full Stack Java & Angular avec plus de 3 ans d'expérience dans la conception et le développement d'applications web et mobiles performantes et sécurisées. Solide maîtrise de Java (Spring Boot, Quarkus) côté backend et d'Angular côté frontend.",
   "Expérience en architecture logicielle, API RESTful, conformité TM Forum (TMF), tests unitaires et intégration continue. Habitué au travail en méthodologie Agile Scrum, au sein d'équipes pluridisciplinaires et en relation directe avec les métiers.",
 ];
 
@@ -265,7 +266,7 @@ export type Project = {
   year: string;
   desc: string;
   stack: string[];
-  img: string;
+  img?: string;
   featured?: boolean;
 };
 
@@ -316,6 +317,15 @@ export const projects: Project[] = [
     desc: "Suivi des stocks en temps réel, prévision des approvisionnements et réduction du gaspillage alimentaire pour la restauration.",
     stack: ["Angular", "Spring Boot", "MySQL"],
     img: imgStocks,
+  },
+  {
+    id: "rendez-vous-medicaux",
+    title: "Gestion des rendez-vous médicaux",
+    meta: "ENS NG-Consulting",
+    year: "Projet",
+    desc: "Application de gestion des rendez-vous entre médecins et patients, avec organisation des disponibilités, prise de rendez-vous et suivi des consultations.",
+    stack: ["Ionic", "Angular", "Laravel"],
+    img: imgMedicalAppointments,
   },
 ];
 

@@ -11,29 +11,37 @@ function ProjectCard({ project, big = false }: { project: Project; big?: boolean
       )}
     >
       {/* visuel */}
-      <div className={cn("relative overflow-hidden", big ? "aspect-[16/9]" : "aspect-[16/10]")}>
-        <img
-          src={project.img}
-          alt={`Aperçu du projet ${project.title}`}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.08]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/10 to-transparent" />
-        <span className="absolute right-3 top-3 rounded-[4px] border border-line bg-ink-950/85 px-2.5 py-1 font-mono text-[11px] tracking-[0.14em] text-ember">
-          {project.year}
-        </span>
-        {big && (
-          <span className="absolute left-3 top-3 rounded-[4px] border border-mint/40 bg-ink-950/85 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-mint">
-            mission télécom
+      {project.img && (
+        <div className={cn("relative overflow-hidden", big ? "aspect-[16/9]" : "aspect-[16/10]")}>
+          <img
+            src={project.img}
+            alt={`Aperçu du projet ${project.title}`}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.08]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/10 to-transparent" />
+          <span className="absolute right-3 top-3 rounded-[4px] border border-line bg-ink-950/85 px-2.5 py-1 font-mono text-[11px] tracking-[0.14em] text-ember">
+            {project.year}
           </span>
-        )}
-        <div className="absolute bottom-3 left-4 font-mono text-[11px] uppercase tracking-[0.2em] text-mist/90">
-          {project.meta}
+          {big && (
+            <span className="absolute left-3 top-3 rounded-[4px] border border-mint/40 bg-ink-950/85 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-mint">
+              mission télécom
+            </span>
+          )}
+          <div className="absolute bottom-3 left-4 font-mono text-[11px] uppercase tracking-[0.2em] text-mist/90">
+            {project.meta}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* contenu */}
       <div className="flex flex-1 flex-col p-6">
+        {!project.img && (
+          <div className="mb-3 flex items-center justify-between gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-dim">
+            <span>{project.meta}</span>
+            <span className="shrink-0 text-ember">{project.year}</span>
+          </div>
+        )}
         <h3
           className={cn(
             "font-display font-bold text-fog transition-colors duration-300 group-hover:text-ember",
@@ -76,7 +84,7 @@ export default function Projects() {
           index="04"
           kicker="travaux sélectionnés"
           title="Projets"
-          desc="Cinq projets qui résument mon terrain de jeu : automatisation télécom, standards TM Forum, transport, éducation et logistique."
+          desc="Six projets qui résument mon terrain de jeu : automatisation télécom, standards TM Forum, transport, éducation, logistique et santé."
         />
 
         {/* projets phares */}

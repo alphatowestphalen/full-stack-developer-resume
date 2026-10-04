@@ -14,27 +14,10 @@ export default function Experience() {
           desc="Du secteur télécom à l'éducation en passant par la logistique restauration — des missions variées, un même niveau d'exigence."
         />
 
-        <div className="relative mx-auto max-w-5xl">
-          {/* rail vertical */}
-          <span
-            className="absolute bottom-4 left-[8px] top-2 w-px bg-gradient-to-b from-ember via-line to-transparent md:left-[9px]"
-            aria-hidden="true"
-          />
-
-          <ol className="space-y-14">
+        <div className="mx-auto max-w-7xl">
+          <ol className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {experiences.map((exp, i) => (
-              <li key={`${exp.company}-${exp.period}`} className="relative pl-10 md:pl-14">
-                {/* point du rail */}
-                <span
-                  className={cn(
-                    "absolute left-0 top-1.5 grid h-[17px] w-[17px] place-items-center rounded-full border-2 md:h-[19px] md:w-[19px]",
-                    exp.current ? "ping-soft border-mint bg-mint/30" : "border-ember bg-ink-950"
-                  )}
-                  aria-hidden="true"
-                >
-                  <span className={cn("h-[5px] w-[5px] rounded-full", exp.current ? "bg-mint" : "bg-ember")} />
-                </span>
-
+              <li key={`${exp.company}-${exp.period}`} className="rounded-md border border-line bg-ink-900/70 p-5 md:p-6">
                 <Reveal delay={i * 60}>
                   {/* entête de l'entrée */}
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -67,7 +50,7 @@ export default function Experience() {
                     {exp.projects.map((proj) => (
                       <article
                         key={proj.name}
-                        className="group rounded-lg border border-line bg-ink-900/70 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-ember/40 hover:bg-ink-850 hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] md:p-7"
+                        className="group border-t border-line-soft pt-5 first:border-t-0 first:pt-0"
                       >
                         <div className="flex items-start justify-between gap-4">
                           <h4 className="font-display text-lg font-bold text-fog transition-colors duration-300 group-hover:text-ember md:text-xl">
